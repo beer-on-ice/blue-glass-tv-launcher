@@ -1,23 +1,23 @@
 <div align="center">
 
-# Blue Glass Home
+# Blue Glass TV Launcher · Android TV 电视桌面
 
 **让电视回到一个安静、清楚、好用的首页。**
 
-原生 Android TV 桌面 · 蓝色玻璃与低饱和纯色 · 为遥控器设计
+Android TV 电视桌面 / TV Launcher · 蓝色玻璃与低饱和纯色 · 为遥控器设计
 
 ![Android 8.0+](https://img.shields.io/badge/Android-8.0%2B-3D8D73?style=flat-square)
 ![Native Java](https://img.shields.io/badge/Native-Java-496A93?style=flat-square)
 ![Version 1.1.0](https://img.shields.io/badge/version-1.1.0-66738A?style=flat-square)
 [![MIT License](https://img.shields.io/badge/license-MIT-8A795F?style=flat-square)](LICENSE)
 
-[下载 APK](https://github.com/beer-on-ice/blue-glass-home/releases/latest) · [功能与截图](#功能与截图) · [安装](#安装) · [编译源码](#编译源码)
+[下载 APK](https://github.com/beer-on-ice/blue-glass-tv-launcher/releases/latest) · [功能与截图](#功能与截图) · [安装](#安装) · [编译源码](#编译源码)
 
 </div>
 
 ![Blue Glass Home 原版蓝色玻璃首页](docs/screenshots/home.png)
 
-Blue Glass Home 是一款轻量的 Android TV 桌面：真实 HDMI 输入、六个常用应用、时钟和系统入口，集中在一屏。半透明卡片配合清晰的遥控器焦点，背景可以保留蓝色玻璃，也可以换成纯色或自己的图片。
+Blue Glass TV Launcher（应用内名称 Blue Glass Home）是一款轻量的 Android TV 电视桌面：真实 HDMI 输入、六个常用应用、时钟和系统入口，集中在一屏。半透明卡片配合清晰的遥控器焦点，背景可以保留蓝色玻璃，也可以换成纯色或自己的图片。
 
 界面采用 Java 原生 View 和矢量绘制，无第三方运行时依赖，无广告、推荐信息流、遥测或网络请求。v1.1.0 APK 约 34 KB。
 
@@ -63,7 +63,7 @@ Blue Glass Home 是一款轻量的 Android TV 桌面：真实 HDMI 输入、六�
 
 ### 直接安装 APK
 
-1. 在 [Releases](https://github.com/beer-on-ice/blue-glass-home/releases/latest) 下载 `BlueGlassHome.apk`。
+1. 在 [Releases](https://github.com/beer-on-ice/blue-glass-tv-launcher/releases/latest) 下载 `BlueGlassHome.apk`。
 2. 用电视文件管理器安装；也可以通过 ADB 安装。
 3. 打开“客厅 · Blue Glass”，进入齿轮 →“选择默认桌面”，选择本应用。
 
@@ -114,6 +114,8 @@ Android 在新增 HOME 应用时可能重新询问默认选择。需要换回其
 
 **支持哪些电视？** 需要 Android 8.0 / API 26 或更高版本。已在 Sony X9000H（BRAVIA VH1，国行 Android 10 / API 29）验证。其他品牌、型号和固件尚未逐一测试，输入切换和设置入口可能不同。
 
+**支持 ARMv7 吗？** 支持 ARMv7（32 位）和 ARM64；纯 Java APK 不包含 `.so` 原生库，使用同一安装包，无需区分 CPU 架构。最低要求 Android 8.0，ARMv7 实机尚未单独验证。
+
 **“已连接”是否代表有画面？** 连接与待机状态来自系统输入框架，不代表视频信号质量。Sony 某些固件会将所有端口报告为 connected，这种情况下桌面不把它当成真实信号确认。
 
 **无法从卡片切换输入？** 可使用“全部输入”里的系统输入源面板，或遥控器输入源键。HDMI 直达由电视固件提供能力。
@@ -129,8 +131,8 @@ Android 在新增 HOME 应用时可能重新询问默认选择。需要换回其
 环境：JDK 17 或 21、Android SDK Platform 34、Build Tools 34.0.0。项目使用 AGP 8.5.2 与随仓库提供的 Gradle Wrapper 8.9，首次构建需要下载构建依赖。
 
 ```bash
-git clone https://github.com/beer-on-ice/blue-glass-home.git
-cd blue-glass-home
+git clone https://github.com/beer-on-ice/blue-glass-tv-launcher.git
+cd blue-glass-tv-launcher
 export JAVA_HOME=/path/to/jdk
 export ANDROID_HOME=/path/to/android-sdk
 chmod +x gradlew build.sh install-preview.sh
